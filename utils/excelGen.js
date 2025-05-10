@@ -39,9 +39,9 @@ const generateExcel = async (data) => {
 
   // Add totals
   sheet.addRow([]);
-  sheet.addRow(["", "", "Original Total", data.originalTotal]);
-  sheet.addRow(["", "", "Calculated Total", data.totalCalculated]);
-  sheet.addRow(["", "", "Correct?", data.isCorrect ? "Yes" : "No"]);
+  sheet.addRow(["", "", "Sub Total", data.subTotal]);
+  sheet.addRow(["", "", `GST(${data.gst}%)`, data.gstAmount]);
+  sheet.addRow(["", "", "Total", data.subTotal + data.gstAmount]);
 
   // Style the totals
   const lastRow = sheet.rowCount;

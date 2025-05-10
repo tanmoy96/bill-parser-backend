@@ -30,14 +30,18 @@ const parseInvoiceFromImage = async (imagePath) => {
 {
   "companyName": "string",
   "invoiceNo": "string",
-  "date": "YYYY-MM-DD",
+  "date": "dd-mm-yyyy",
   "items": [
     { "name": "string", "qty": number, "rate": number, "amount": number }
   ],
+  "subTotal": number,
   "totalCalculated": number,
   "originalTotal": number,
-  "isCorrect": boolean
-}`,
+  "isCorrect": boolean,
+  "gst": number,
+  "gstAmount": number,
+}
+  If there is no GST, then set gst to 0 and gstAmount to 0.`,
           },
           {
             type: "image_url",
